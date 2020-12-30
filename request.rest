@@ -1,0 +1,79 @@
+GET http://localhost:5000/
+
+
+### Sign In
+POST http://localhost:5000/auth
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "password": "password"
+}
+
+
+### Sign Out
+DELETE http://localhost:5000/auth
+Authorization: 
+Content-Type: application/json
+
+{
+    "refreshToken": ""
+}
+
+
+### Get User Profile
+GET http://localhost:5000/profile
+Authorization: 
+
+
+### Update User Profile
+PATCH http://localhost:5000/profile
+Authorization: 
+Content-Type: application/json
+
+{
+    "email": "test@test.com",
+    "firstName": "firstName",
+    "lastName": "lastName",
+    "gender": "male",
+    "dateOfBirth": "1999-04-20"
+}
+
+
+### Refresh Token
+POST http://localhost:5000/token
+Content-Type: application/json
+
+{
+    "refreshToken": ""
+}
+
+
+### Get Active Sessions
+GET http://localhost:5000/sessions
+Authorization: 
+
+
+### Remove Active Sessions
+DELETE http://localhost:5000/sessions/5fd98f152c86ce28fc11f432
+Authorization: 
+
+
+### Change Password
+PATCH http://localhost:5000/password
+Authorization: 
+Content-Type: application/json
+
+{
+    "currentPassword": "password",
+    "newPassword": "password",
+    "confirmPassword": "password"
+}
+
+
+### Get Roles
+GET http://localhost:5000/roles
+Authorization: 
+
+
+###
