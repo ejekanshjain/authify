@@ -1,7 +1,7 @@
 {
     "name": "authify",
     "version": "0.0.1",
-    "main": "index.js",
+    "main": "build/index.js",
     "scripts": {
         "start": "node .",
         "dev": "nodemon src/index.ts",
