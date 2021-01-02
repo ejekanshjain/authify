@@ -1,7 +1,8 @@
 import { Request, Response, NextFunction } from 'express'
 import jwt from 'jsonwebtoken'
-import { UnauthorizedError } from '../customError'
 import unless from 'express-unless'
+
+import { UnauthorizedError } from '../customError'
 
 declare module 'express' {
     export interface Request {

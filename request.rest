@@ -81,9 +81,23 @@ Content-Type: application/json
 }
 
 
-### Get Roles
+### Get Users (only admin)
+GET http://localhost:5000/users
+Authorization: 
+
+
+### Get Roles (only admin)
 GET http://localhost:5000/roles
 Authorization: 
+
+
+### Validate Token
+POST http://localhost:5000/validateToken
+Content-Type: application/json
+
+{
+    "token": ""
+}
 
 
 ###

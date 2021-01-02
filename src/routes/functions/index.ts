@@ -8,6 +8,8 @@ import getActiveSessions from './getActiveSessions'
 import removeActiveSession from './removeActiveSession'
 import changePassword from './changePassword'
 import getRoles from './getRoles'
+import getUsers from './getUsers'
+import validateToken from './validateToken'
 
 export {
     welcome,
@@ -19,5 +21,7 @@ export {
     getActiveSessions,
     removeActiveSession,
     changePassword,
-    getRoles
+    getRoles,
+    getUsers,
+    validateToken
 }

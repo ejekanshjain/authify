@@ -29,6 +29,10 @@ app.use(auth({ secret: JWT_SECRET }).unless({
         {
             method: 'POST',
             url: '/token'
+        },
+        {
+            method: 'POST',
+            url: '/validateToken'
         }
     ]
 }))

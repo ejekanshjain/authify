@@ -13,6 +13,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
         if (!user) return next(new BadRequestError('User not found!'))
         if (!(await bcrypt.compare(currentPassword, user.password.toString()))) return next(new BadRequestError('Your password is invalid!'))
         user.password = await bcrypt.hash(newPassword, 10)
+        user.passwordUpdatedAt = new Date()
         await user.save()
         res.sendStatus(200)
         return next()

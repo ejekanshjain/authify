@@ -10,8 +10,11 @@ import {
     getActiveSessions,
     removeActiveSession,
     changePassword,
-    getRoles
+    getRoles,
+    getUsers,
+    validateToken
 } from './functions'
+import authAdmin from '../middlewares/authAdmin'
 
 const router = Router()
 
@@ -24,6 +27,8 @@ router.post('/token', refreshToken)
 router.post('/sessions', getActiveSessions)
 router.delete('/sessions/:id', removeActiveSession)
 router.patch('/password', changePassword)
-router.get('/roles', getRoles)
+router.get('/roles', authAdmin, getRoles)
+router.get('/users', authAdmin, getUsers)
+router.post('/validateToken', validateToken)
 
 export default router
