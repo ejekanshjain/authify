@@ -17,6 +17,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
         res.sendStatus(200)
         return next()
     } catch (err) {
+        if (err.name === 'MongoError' && err.code === 11000) return next(new BadRequestError('User with same email already exists!'))
         return next(err)
     }
 }

@@ -9,9 +9,9 @@ export default async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { refreshToken } = req.body
         if (!refreshToken) return next(new BadRequestError('"refreshToken" is required!'))
+        if (!req.headers['user-agent']) return next(new ForbiddenError('No User Agent!'))
         const foundRefreshToken = await RefreshToken.findOne({ refreshToken })
         if (!foundRefreshToken) return next(new UnauthorizedError('Invalid Authorization token!'))
-        if (foundRefreshToken.userAgent !== req.headers['user-agent']) return next(new ForbiddenError('Invalid User Agent!'))
         let decodedUser: any
         try {
             decodedUser = jwt.verify(foundRefreshToken.refreshToken.toString(), JWT_REFRESH_SECRET)
@@ -34,6 +34,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
             role: user.role,
             exp
         }, JWT_SECRET)
+        foundRefreshToken.userAgent = req.headers['user-agent']
         await foundRefreshToken.save()
         res.json({
             userId: user._id,

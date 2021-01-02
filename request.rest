@@ -50,13 +50,23 @@ Content-Type: application/json
 
 
 ### Get Active Sessions
-GET http://localhost:5000/sessions
+POST http://localhost:5000/sessions
 Authorization: 
+Content-Type: application/json
+
+{
+    "refreshToken": ""
+}
 
 
 ### Remove Active Sessions
 DELETE http://localhost:5000/sessions/5fd98f152c86ce28fc11f432
 Authorization: 
+Content-Type: application/json
+
+{
+    "refreshToken": ""
+}
 
 
 ### Change Password
