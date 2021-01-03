@@ -1,0 +1,13 @@
+node_modules
+build
+.env
+.git
+.gitignore
+.eslintrc.json
+.eslintignore
+LICENSE
+README.md
+Dockerfile
+.dockerignore
+docker-compose.yaml
+request.rest

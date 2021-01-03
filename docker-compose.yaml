@@ -1,0 +1,12 @@
+version: "3"
+services:
+  authify:
+    image: docker.io/library/authify:0.0.1
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - MONGODB_URL=mongodb://localhost:27017/Authify
+      - JWT_SECRET=secret1
+      - JWT_REFRESH_SECRET=secret2
+    ports: 
+      - 5000:5000
