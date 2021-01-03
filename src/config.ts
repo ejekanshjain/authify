@@ -7,9 +7,9 @@ if (NODE_ENV !== 'production') {
 }
 
 const PORT = Number(process.env.PORT ?? 5000)
-const MONGODB_URL = process.env.MONGODB_URL ?? 'mongodb://localhost:27017'
-const JWT_SECRET = process.env.JWT_SECRET ?? 'secret'
-const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET ?? 'refresh secret'
+const MONGODB_URL = process.env.MONGODB_URL ?? 'mongodb://localhost:27017/Authify'
+const JWT_SECRET = process.env.JWT_SECRET ?? 'secret1'
+const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET ?? 'secret2'
 
 export {
     NODE_ENV,
